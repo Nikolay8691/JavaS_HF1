@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>bubbles</title>
+	<script>
+		var scores = [60, 50, 60, 58, 54, 54,
+					  58, 50, 52, 54, 48, 69,
+					  34, 55, 51, 52, 44, 51,
+					  69, 64, 66, 55, 52, 61,
+					  46, 31, 57, 52, 44, 18,
+					  41, 53, 55, 61, 51, 44];
+		var highscore = 0;
+		var output;
+		for (var i = 0; i < scores.length; i++){
+			output = "Bubble solution #" + i + " score : " + scores[i];
+			console.log(output);
+			if (scores[i] > highscore) {
+				highscore = scores[i];
+			}
+		}
+		console.log("Bubble tests: " + scores.length);
+		console.log("Highest bubble score: " + highscore);
+
+		var bestSolutions = [];
+		for (var i = 0; i < scores.length; i++) {
+			if (scores[i] == highscore) {
+				bestSolutions.push(i);
+			}
+		}
+		console.log("solutions with the highest scores : " + bestSolutions);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
