@@ -124,6 +124,8 @@ function parseGuess(guess) {
 function init() {
 	var fireButton = document.getElementById("fireButton");
 	fireButton.onclick = handleFireButton;
+	var guessInput = document.getElementById("guessInput");
+	guessInput.onkeypress = handleKeyPress;
 }
 
 function handleFireButton() {
@@ -135,6 +137,14 @@ function handleFireButton() {
 
 	guessInput.value = "";
 
+}
+
+function handleKeyPress(ebutton) {
+	var fireButton = document.getElementById(("fireButton"));
+	if (ebutton.keyCode === 13) {
+		fireButton.click();
+		return false;
+	}
 }
 
 window.onload = init;
