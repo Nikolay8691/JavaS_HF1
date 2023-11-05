@@ -35,7 +35,7 @@ var model = {
 	// ships : [{ locations : ["06", "16", "26"], hits : ["", "", ""]},
 	// 		 { locations : ["24", "34", "44"], hits : ["", "", ""]},
 	// 		 { locations : ["10", "11", "12"], hits : ["", "", ""]}],
-	ships : [{ locations : [0, 0, 0], hits : ["", "", ""]},
+	ships : [{ locations : ["06", "16", "26"], hits : ["", "", ""]},
 			 { locations : [0, 0, 0], hits : ["", "", ""]},
 			 { locations : [0, 0, 0], hits : ["", "", ""]}],
 
@@ -56,8 +56,10 @@ var model = {
 			newShipLocations = ["06", "16", "26"];
 		} else if (this.newShips === 1) {
 			newShipLocations = ["24", "34", "44"];
-		} else {
+		} else if (this.newShips === 2) {
 			newShipLocations = ["10", "11", "12"];
+		} else {
+			newShipLocations = ["50", "51", "52"];
 		}
 		this.newShips++
 		return newShipLocations;
