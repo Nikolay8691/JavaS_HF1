@@ -30,12 +30,10 @@ var model = {
 	shipsSunk : 0,
 	shipLength : 3,
 
-	newShips : 0,
-
 	// ships : [{ locations : ["06", "16", "26"], hits : ["", "", ""]},
 	// 		 { locations : ["24", "34", "44"], hits : ["", "", ""]},
 	// 		 { locations : ["10", "11", "12"], hits : ["", "", ""]}],
-	ships : [{ locations : ["06", "16", "26"], hits : ["", "", ""]},
+	ships : [{ locations : [0, 0, 0], hits : ["", "", ""]},
 			 { locations : [0, 0, 0], hits : ["", "", ""]},
 			 { locations : [0, 0, 0], hits : ["", "", ""]}],
 
@@ -51,24 +49,34 @@ var model = {
 	},
 
 	generateShip : function() {
-		var newShipLocations;
-		if (this.newShips === 0) {
-			newShipLocations = ["06", "16", "26"];
-		} else if (this.newShips === 1) {
-			newShipLocations = ["24", "34", "44"];
-		} else if (this.newShips === 2) {
-			newShipLocations = ["10", "11", "12"];
+		var direction = Math.floor(Math.random() * 2);
+		var row, column;
+
+		if (direction == 1) {
+			row = Math.floor(Math.random() * this.boardSize);
+			column = Math.floor(Math.random() * (this.boardSize - this.shipLength));
 		} else {
-			newShipLocations = ["50", "51", "52"];
+			row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+			column = Math.floor(Math.random() * this.boardSize);
 		}
-		this.newShips++
+
+		var newShipLocations = [];
+
+		for (var i = 0; i < this.shipLength; i++) {
+			if (direction == 1) {
+				newShipLocations.push(row + "" + (column + i));
+			} else {
+				newShipLocations.push((row + i) + "" + column);
+			}
+		}
+
 		return newShipLocations;
 	},
 
 	collision : function(locations) {
 		for (var i = 0; i < this.numShips; i++) {
-			var ship = model.ships[i];
-			// var ship = this.ships[i];
+			// var ship = model.ships[i];
+			var ship = this.ships[i];
 			for (var j = 0; j < locations.length; j++) {
 				if (ship.locations.indexOf(locations[j]) >= 0) {
 					return true;
