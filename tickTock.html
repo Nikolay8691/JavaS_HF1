@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tick Tock</title>
+	<script>
+		function init() {
+
+			var count = 0;
+			var tick = true;
+			do {
+				if (tick) {
+					document.write('tick' + '<br><br>');
+					console.log('tick');
+					count++
+					tick = false;
+				} else {
+					document.write('Tock' + '<br><br>');
+					console.log('Tock');
+					count++
+					tick = true;
+				}
+			} while (count < 10);
+
+		}
+		// window.onload = init;
+		setTimeout(init, 5000);
+	</script>
+</head>
+<body>
+	<h1>Tick Tock body</h1>
+</body>
+</html>
