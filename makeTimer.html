@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>makeTimer</title>
+	<script>
+
+//		function makeTimer(doneMessage, n) {
+//			setTimeout(function() {
+//				alert(doneMessage);
+//			}, n);
+//		}
+
+		function handler(doneMessage) {
+			alert(doneMessage);
+		}
+
+		function makeTimer(doneMessage, n) {
+			setTimeout(handler, n, doneMessage);
+		}
+
+		makeTimer("Cookies are done!", 1000);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
