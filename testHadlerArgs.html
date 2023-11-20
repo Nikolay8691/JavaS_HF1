@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Handler arguments</title>
+	<script>
+		function administer(patient, func_1, time) {
+			if (func_1) {
+				alert(patient + ' ' + time + ' : inject ' + dosage + '!');
+			};
+		}
+		function vaccine(dosage) {
+			if (dosage) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		num1 = 'hello';
+		time = '09:35';
+		portion = '10mg';
+		administer(num1, vaccine(portion), time);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
