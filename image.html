@@ -21,7 +21,13 @@
 
 			var name = image.id + ".jpg";
 			image.src = "images/" + name;
+
+			setTimeout(function() {
+				var name = image.id + "blur.jpg";
+				image.src = "images/" + name;
+			}, 2000);
 		}
+
 	</script>
 </head>
 <body>
