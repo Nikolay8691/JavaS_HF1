@@ -14,11 +14,20 @@
 			alert(doneMessage);
 		}
 
-		function makeTimer(doneMessage, n) {
+		// function makeTimer(doneMessage, n) {
+		// 	setTimeout(handler, n, doneMessage);
+		// }
+
+		// makeTimer("Cookies are done!", 1000);
+
+		function makeTimer(n) {
+			// setTimeout(handler, n);
 			setTimeout(handler, n, doneMessage);
 		}
 
-		makeTimer("Cookies are done!", 1000);
+		var doneMessage = "Cookies are done!";
+		makeTimer(1000);
+		
 	</script>
 </head>
 <body>
